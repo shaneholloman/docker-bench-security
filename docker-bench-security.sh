@@ -96,7 +96,7 @@ do
   esac
 done
 
-# Load output formating
+# Load output formatting
 . ./functions/output_lib.sh
 
 yell_info
@@ -175,7 +175,7 @@ main () {
       # No excludes just run the checks specified
       "$c"
     else
-      # Exludes specified and check exists
+      # Excludes specified and check exists
       checkexcluded="$(echo ",$checkexclude" | sed -e 's/^/\^/g' -e 's/,/\$|/g' -e 's/$/\$/g')"
 
       if echo "$c" | grep -E "$checkexcluded" 2>/dev/null 1>&2; then
