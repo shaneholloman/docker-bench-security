@@ -233,8 +233,20 @@ check_4_10() {
 
 check_4_11() {
   local id="4.11"
-  local desc="Ensure only verified packages are are installed (Manual)"
+  local desc="Ensure only verified packages are installed (Manual)"
   local remediation="You should use a secure package distribution mechanism of your choice to ensure the authenticity of software packages."
+  local remediationImpact="None."
+  local check="$id - $desc"
+  starttestjson "$id" "$desc"
+
+  note -c "$check"
+  logcheckresult "NOTE"
+}
+
+check_4_12() {
+  local id="4.12"
+  local desc="Ensure all signed artifacts are validated (Manual)"
+  local remediation="Validate artifacts signatures before uploading to the package registry."
   local remediationImpact="None."
   local check="$id - $desc"
   starttestjson "$id" "$desc"
